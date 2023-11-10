@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+::placeholder {
+    color: black;
+}
+:root {
+    --Bg-Btn-Dark: #333;
+    --Bg-color-red: red;
+    --Bg-PopUp: white;
+    --BorderRadius-PopUp: 10px;
+}
+body {
+    height: 100vh;
+    background: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+header {
+    margin-top: -50px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+}
+header button {
+    border: none;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 5px;
+    width: 47px;
+    cursor: pointer;
+    transition: .3s all;
+    background: black;
+    color: white;
+}
+header button h4 {
+    margin-left: -200px;
+    transition: .4s all;
+}
+header button:hover {
+    background: grey;
+    box-shadow: 0 0 10px black;
+}   
+header button:hover h4 {
+    margin-left: 10px;
+}
+header button:hover:nth-child(1) {width: 90px;}
+header button:hover:nth-child(2) {width: 110px;}
+header button:hover:nth-child(3) {width: 115px;}
+header button:hover:nth-child(4) {width: 200px;}
+.Container-Video {
+    position: relative;
+    width: 67vw;
+    height: 80vh;
+}
+.Container-Video video {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.Container-Video .ContainerProgress {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.Container-Video .ContainerProgress .ProgressBarra {
+    width: 0%;
+    height: 100%;
+    background: var(--Bg-color-red);
+    border-radius: inherit;
+}
+.Container-Video .Controls {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+}
+.Container-Video .Controls span {
+    font-size: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s all;
+}
+.Container-Video .Controls span:hover {
+    background: black;
+    padding: 5px;
+    font-size: 30px;
+    transform: translateY(-5px);
+    color: var(--Bg-color-red);
+}   
+.Container-Video .Controls span:nth-child(3) {display: none;}
+.Container-Video .Controls .PrintTimeMovie {
+    font-size: 20px;
+    font-weight: bold;
+}
+.Container-Video .Controls .Contianer-PictureInPicture {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: solid white 2px;
+    border-radius: 5px;
+    margin-left: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.Container-Video .Controls .Contianer-PictureInPicture .PictureInPicture {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: white;
+    bottom: 3px;
+    right: 3px;
+}
+.Container-Video .Controls .Contianer-PictureInPicture:hover .PictureInPicture {
+    animation: pictureINpictureAnimation 1s ease-in-out;
+}
+@keyframes pictureINpictureAnimation {
+    0%, 100% {
+        width: 50%;
+        height: 50%;
+        bottom: 3px;
+        right: 3px;
+    }
+    50% {
+        width: 100%;
+        height: 100%;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+.ContainerInsetLink {
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--Bg-PopUp);
+    border-radius: var(--BorderRadius-PopUp);
+    width: 0px;
+    transition: .4s ease-in-out;
+}
+.ContainerInsetLink input {
+    width: 100%;
+    padding: 10px;
+    overflow: none;
+    border: none;
+    font-size: 17px;
+}
+.ContainerInsetLink .ControlsLink {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.ContainerInsetLink .ControlsLink button {
+    padding: 10px;
+    background: var(--Bg-Btn-Dark);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.ContainerInsetLink .ControlsLink button:hover {
+    background: black;
+    box-shadow: 0 0 10px black;
+}
+.ContainerVolume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background: black;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 0px;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+}
+.ContainerVolume h4 {
+    padding: 5px;
+    background: white;
+    border-radius: inherit;
+    color: black;
+}
+.ContainerVolume #BtnSettingsVolume {
+    display: block;
+    font-size: 20px;
+}
+.ContainerVolume #BtnSettingsVolume:hover {
+    font-size: 20px;
+    transform: translate(0px);
+    padding: 0px;
+}
+.PlaylistMovie {
+    position: absolute;
+    overflow-y: scroll;
+    width: 0px;
+    height: 0px;
+    background: white;
+    border-radius: var(--BorderRadius-PopUp);
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: .4s all;
+}
+.PlaylistMovie::-webkit-scrollbar {
+    width: 0px;
+}
+.PlaylistMovie .Card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+}
+.PlaylistMovie .Card video {
+    width: 100%;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+.PlaylistMovie .Card .ContrlsPlayList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+.PlaylistMovie .Card .ContrlsPlayList h5 {
+    font-size: 20px;
+    color: white;
+}
+.ContainerHistoricoDownload {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--Bg-PopUp);
+    color: black;
+    width: 0px;
+    height: 0px;
+    border-radius: var(--BorderRadius-PopUp);
+    overflow-y: scroll;
+    transition: .4s all;
+}
+.ContainerHistoricoDownload::-webkit-scrollbar {
+    width: 0px;
+}
+.ContainerHistoricoDownload .CardHistorico {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: .4s all;
+    overflow: hidden;
+}
+.ContainerHistoricoDownload .CardHistorico:hover {
+    border-radius: calc(var(--BorderRadius-PopUp) / 2);
+    color: white;
+    background: linear-gradient(45deg, grey 50%, dimgrey 50%);
+    box-shadow: 0 0 10px black;
+    margin-bottom: 10px;
+}
+.ContainerHistoricoDownload .CardHistorico:hover::before {
+    position: absolute;
+    content: '';
+    height: 145%;
+    width: 1px;
+    background: grey;
+    left: 50%;
+    top: -12px;
+    transform: translateX(-50%) rotate(-46deg);
+    box-shadow: -5px 0px 10px 1px black;
+}
+.ContainerHistoricoDownload .CardHistorico .Info {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ContainerHistoricoDownload .CardHistorico .BtnActionCardHistorico {
+    background: none;
+    border: none;
+    transform: rotate(90deg);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.ContainerHistoricoDownload .CardHistorico .BtnActionCardHistorico:hover {color: var(--Bg-color-red);}
+/* Javascript */
+.OpenContainerInsetLink {
+    width: 60vw; 
+    padding: 10px;
+}
+.VideoFullScreen {
+    transition: .4s all;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    margin-left: -318px;
+    margin-top: -130px;
+}
+.VideoFullScreen video {
+    transition: .4s all;
+    height: 90%;
+    border-radius: 0px;
+}
+.AboluteContainer {
+    transition: .4s all;
+    position: absolute; 
+    z-index: 1;
+    left: 0;
+    bottom: 10px;
+}
+.AboluteControls {
+    transition: .4s all;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: -70px;
+}
+.OpenContainerVolume {
+    width: 240px;
+    padding: 10px; 
+    margin: 0px 20px;
+}
+.TogglePlaylistMovie {
+    padding: 10px;
+    width: 20vw;
+    height: 70vh;
+}
+.ToggleHistoricoDownload {
+    padding: 10px;
+    width: 20vw;
+    height: 70vh;
+}

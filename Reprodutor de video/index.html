@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reprodutor de video</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <button id="BtnDownloadInLink">
+            <span class="material-symbols-outlined">
+                media_link
+            </span>
+
+            <h4>link</h4>
+        </button>
+
+        <button id="BtnProcurarMovie">
+            <span class="material-symbols-outlined">
+                folder_open
+            </span>
+
+            <h4>Procurar</h4>
+        </button>
+
+        <button id="BtnDownload">
+            <span class="material-symbols-outlined">
+                download
+            </span>
+
+            <h4>Download</h4>
+        </button>
+
+        <button id="BtnHistorico">
+            <span class="material-symbols-outlined">
+                history
+            </span>
+
+            <h4>Historico de download</h4>
+        </button>
+    </header>
+
+    <div class="Container-Video">
+        <div id="PrintVideo"></div>
+
+        <div class="ContainerProgress" id="ContainerProgress">
+            <div class="ProgressBarra" id="Progressbarra"></div>
+        </div>
+    
+        <div class="Controls" id="ControlsPlayer">
+            <div class="PrintTimeMovie" id="PrintCurrentTime">00:00:00</div>
+
+            <div style="display: flex; align-items: center;">
+                <span class="material-symbols-outlined" id="BtnBacktMovie">
+                    skip_previous
+                </span>
+    
+                <span class="material-symbols-outlined" id="BtnPlay">
+                    play_arrow
+                </span>
+    
+                <span class="material-symbols-outlined" id="BtnPause">
+                    pause
+                </span>
+    
+                <span class="material-symbols-outlined" id="BtnNextMovie">
+                    skip_next
+                </span>
+    
+                <span class="material-symbols-outlined" id="BtnVolume">
+                    volume_up
+                </span>
+
+                <div class="ContainerVolume" id="ContainerVolume">
+                    <input type="range" id="InputVolume" step="0.1" max="100" value="0.5">
+            
+                    <h4 id="PrintVolume">100</h4>
+
+                    <span class="material-symbols-outlined" id="BtnSettingsVolume">
+                        settings
+                    </span>
+                </div>
+
+                <span class="material-symbols-outlined" onclick="toggleFullScreen()">
+                    fullscreen
+                </span>
+
+                <div id="PictureInPicture" class="Contianer-PictureInPicture" title="Pictute-in-Picture">
+                    <div class="PictureInPicture"></div>
+                </div>
+            </div>
+            
+            <div class="PrintTimeMovie" id="TimeCurrentMovie">00:00:00</div>
+        </div>
+    </div>
+
+    <div class="ContainerInsetLink" id="ContainerInsetLink">
+        <input type="url" id="InputUrl" placeholder="Coloque a url do video">
+
+        <div class="ControlsLink">
+            <button id="BtnBaixarPorLink">Baixar por link</button>
+            <button id="BtnbaixarDireto">Baixar por direto</button>
+            <button id="BtnCancelarDownload">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="PlaylistMovie" id="PrintPlaylistMovie">
+        <!-- <div class="Card">
+            <video src="videoDois.mp4"></video>
+
+            <div class="ContrlsPlayList">
+                <h5>1:11:50</h5>
+            </div>
+        </div> -->
+
+        <!--  -->
+    </div>
+
+    <div class="ContainerHistoricoDownload" id="HistoricoDownload">
+        <!-- <div class="CardHistorico">
+            <div class="Info">
+                <h4 class="H4Archive">https://www.google.com</h4>
+                <span class="DataHora">10:10 | 10/10/1010</span>
+            </div>
+
+            <button class="BtnActionCardHistorico">...</button>
+        </div> -->
+    </div>
+
+    <script src="index.js"></script>
+    <script src="load.js"></script>
+</body>
+</html>

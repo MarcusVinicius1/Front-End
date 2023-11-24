@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+::placeholder {
+    color: white;
+}
+body {
+    background: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.PopUpAlerta {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    padding: 10px;
+    transform: translateX(-50%);
+    background: rgba(255, 99, 71, 0.400);
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    transition: .4s ease-in-out;
+}
+.PopUpAlerta .style {
+    width: 2px;
+    height: 100%;
+    background: red;
+    margin-right: 10px;
+    color: transparent;
+}
+.Left {
+    position: relative;
+    height: 100vh;
+    width: 497px;
+    background: #0099FF;
+}
+.Left::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(to right, #5abdff, #0099ff00);
+}
+.Left img {
+    position: absolute;
+    transform: rotate(90deg) translatey(-280px);
+    height: 100%;
+    width: 1000px;
+    z-index: -1;
+    filter: drop-shadow(0 0 10px black);
+}
+.Left .ContainerFoto {
+    position: absolute;
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 180px;
+    background: url('pessoa.png'), transparent;
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(0 0 10px white);
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+}
+.Left .StyleFoto {
+    position: absolute;
+    right: -160px;
+    top: 50%;
+    transform: translateY(-45%);
+    width: 200px;
+    height: 200px;
+    border: solid white 3px;
+    border-radius: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    box-shadow: inset 0 0 10px cyan;
+}
+.Left .Inputs {
+    padding-left: 20px;
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Left .Inputs .Card {
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+.Left .Inputs .Card span {
+    font-size: 40px;
+    color: white;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 10px black);
+}
+.Left .Inputs .Card input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+    background: none;
+    color: white;
+    outline: none;
+}
+.Left button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 10px;
+    border: none;
+    cursor: not-allowed;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+.Left .buttonHoverAddPersonList:hover {
+    background: #333;
+    color: white;
+    text-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px black, inset 0 5px 10px white, inset 0 -5px 10px black;
+}
+.Left .buttonHoverAddPersonList::after {
+    position: absolute;
+    content: '';
+    width: 37%;
+    height: 100%;
+    background: #0099FF;
+    top: 0;
+    right: -41%;
+    transform: skew(-40deg);
+    transition: .4s all;
+    box-shadow: inset -0px 0px 10px black;
+}
+.Left .buttonHoverAddPersonList:hover::after {
+    right: -15px;
+    background: white;
+}
+.Left .buttonHoverAddPersonList::before {
+    position: absolute;
+    content: '';
+    width: 37%;
+    height: 100%;
+    background: #0099FF;
+    top: 0;
+    left: -41%;
+    transform: skew(40deg);
+    transition: .4s all;
+    box-shadow: inset -0px 0px 10px black;
+}
+.Left .buttonHoverAddPersonList:hover::before {
+    left: -15px;
+    background: white;
+}
+#Rigth {
+    width: calc(100vw - 660px);
+    height: 100vh;
+    padding: 10px;
+}
+#Rigth h4 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+#Rigth .Top {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#Rigth .Bottom {
+    width: 100%;
+    height: calc(100% - 150px);
+    background: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px black;
+}
+#Rigth .Bottom::-webkit-scrollbar {
+    width: 0px;
+}
+#Rigth .Bottom:hover::-webkit-scrollbar {
+    width: 5px;
+}
+#Rigth .Bottom::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+#Rigth .Bottom .Card {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    background: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#Rigth .Bottom .Card img {
+    height: 100%;
+    width: 60px;
+    border-radius: 50%;
+}
+#Rigth .Bottom .Card .Nome {
+    width: 85%;
+}
+.InfoUserDataList {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 30vw;
+    background: white;
+    box-shadow: 0 0 10px black;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    display: none;
+}
+.InfoUserDataList .Top {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    gap: 20px;
+}
+.InfoUserDataList .Top img {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+.InfoUserDataList .Top .Info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 8px;
+}
+.InfoUserDataList .Top .Info h4 {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.InfoUserDataList .Bottom {
+    width: 100%;
+    height: calc(100% - 120px);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.InfoUserDataList .Bottom button {
+    padding: 10px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.InfoUserDataList .Bottom button:hover {
+    background: grey;
+}

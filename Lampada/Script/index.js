@@ -30,7 +30,7 @@ setInterval(() => {
 }, 1000)
 
 BtnAcender.onclick = () => {
-    if (Lampada.src.match('Images/acesa.gif') && Lampada.src.match('Images/acesa.gif')) return
+    if (Lampada.src.match('Images/acesa.gif') && Lampada.src.match('Images/quebrada.png')) return
 
     CountCrack--
 

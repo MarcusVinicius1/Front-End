@@ -80,3 +80,10 @@ Btnrestaurar.onclick = () => {
 
     document.body.style.background = 'linear-gradient(25deg, rgb(58, 58, 58) 50%, black 50%)'
 }
+
+document.addEventListener('keydown', ({keyCode}) => {
+    if (keyCode == 32 && Lampada.src.match('Images/apagada.gif')) BtnAcender.click()
+    else if (keyCode == 32 && Lampada.src.match('Images/acesa.gif')) BtnApagar.click()
+
+    if(keyCode == 82 && Lampada.src.match('Images/apagada.gif')) Btnrestaurar.click()
+})

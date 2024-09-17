@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <button id="BtnMusicOrVideo">
+        <span class="material-symbols-rounded" id="SpanTrocaMusicOrMovie">
+            movie
+        </span>
+
+        <span id="MovieOrSong">Video</span>
+    </button>
+    
+    <!-- Player de musica -->
+    <div class="PlayerMusic" id="PlayerMusic">
+        <div class="Left">
+            <img id="CapaMusic" alt="">
+
+            <div class="GraficoOnMusic" id="GraficoOnMusic">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="Rigth">
+            <div id="InfoMusic" class="InfoMusic"></div>
+
+            <div class="Top">
+                <i class="fa-solid fa-caret-left" id="BtnBackMusic"></i>
+                <i class="fa-solid fa-play" id="BtnPlayMusic"></i>
+                <i class="fa-solid fa-pause" id="BtnPauseMusic"></i>
+                <i class="fa-solid fa-caret-right" id="BtnNextMusic"></i>
+            </div>
+
+            <div class="Bottom">
+                <span id="SpanTime">00:00:00</span>
+
+                <div class="ContainerProgress" id="ContainerProgress">
+                    <div class="ProgressBarra" id="ProgressBarra">.</div>
+                </div>
+
+                <span id="SpanDuration">00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player de video -->
+    <div class="PlayerVideo" id="PlayerVideo">
+        <div class="Top">
+            <video src="Videos/Conheça os segredos para usar o display de LCD no Arduino via I2C.mp4" id="InsertVideo"></video>
+        </div>
+
+        <div class="Controls">
+            <i class="fa-solid fa-caret-left" id="BtnBackMovie"></i>
+            <i class="fa-solid fa-play" id="BtnPlayMovie"></i>  
+            <i class="fa-solid fa-pause" id="BtnPauseMovie"></i>
+            <i class="fa-solid fa-caret-right" id="BtnNextMovie"></i>
+            <i class="fa-solid fa-expand" id="BtnFullscreenMovie"></i>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

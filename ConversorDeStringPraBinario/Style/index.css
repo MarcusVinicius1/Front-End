@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+::placeholder {color: white;}
+body {
+    background: #333;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.ModalMensager {
+    position: absolute;
+    padding: 10px;
+    left: 50%;
+    top: -100px;
+    transform: translate(-50%);
+    background: black;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    box-shadow: 0 0 10px black;
+    transition: .4s ease-in-out;
+}
+.App {
+    padding: 10px;
+    width: 45vw;
+    height: 85vh;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    text-align: center;
+}
+.App h4 {
+    font-size: 30px;
+}
+.App section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+.App section button {
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+.App section button:hover {
+    color: red;
+}
+.App .CursorAba {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 130px);
+    width: 50px;
+    height: 2px;
+    background: red;
+}
+.App form {
+    margin-top: 20px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.App form textarea,
+.App form .PrintConvetion {
+    width: 80%;
+    height: 50%;
+    border: none;
+    resize: none;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    overflow-y: auto;
+}
+.App form .Controls {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+.App form .Controls button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+}
+.App form .Controls button:hover {
+    background: black;
+    color: white;
+    box-shadow: 0 0 10px black;
+}
+.App form textarea::-webkit-scrollbar,
+.App form .PrintConvetion::-webkit-scrollbar {
+    width: 0px;
+}
+.App form textarea:hover::-webkit-scrollbar,
+.App form .PrintConvetion:hover::-webkit-scrollbar {
+    width: 5px;
+}
+.App form textarea::-webkit-scrollbar-thumb,
+.App form .PrintConvetion::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, grey, white);
+    border-radius: 10px;
+}

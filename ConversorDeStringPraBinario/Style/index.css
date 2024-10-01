@@ -53,17 +53,42 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 17px;
+    z-index: 2;
 }
 .App section button:hover {
     color: red;
 }
 .App .CursorAba {
+    transition: .2s ease-in-out;
     position: absolute;
     bottom: 0px;
-    left: calc(50% - 130px);
+    left: calc(50% - 132px);
     width: 50px;
     height: 2px;
     background: red;
+    box-shadow: 0 0 10px red;
+    z-index: 1;
+}
+.App .CursorAba::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.32);
+    left: 0;
+    top: -35px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.App .CursorAba::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: white;
+    left: 0;
+    bottom: 6px;
+    z-index: 3;
 }
 .App form {
     margin-top: 20px;
@@ -77,11 +102,12 @@ body {
 }
 .App form textarea,
 .App form .PrintConvetion {
-    width: 80%;
+    width: 100%;
     height: 50%;
     border: none;
     resize: none;
     background: black;
+    box-shadow: 0 0 10px black;
     color: white;
     padding: 10px;
     border-radius: 10px;
@@ -89,7 +115,7 @@ body {
     overflow-y: auto;
 }
 .App form .Controls {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     gap: 10px;

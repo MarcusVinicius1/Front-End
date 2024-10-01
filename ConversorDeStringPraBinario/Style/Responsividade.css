@@ -1,0 +1,20 @@
+@media only screen and (max-width: 425px) {
+    .App {
+        width: 90vw;
+        height: 80vh;
+    }
+    .App form textarea,
+    .App form .PrintConvetion {
+        width: 100%;
+    }
+    .App form .Controls {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .App {
+        height: 90vh;
+        padding-bottom: 30px;
+    }
+}

@@ -6,6 +6,7 @@ const PrintDecodificacao = document.getElementById('PrintDecodificacao')
 const BtnIniciar = document.getElementById('BtnIniciar')
 const BtnCopiar = document.getElementById('BtnCopiar')
 const BtnAbaTexto = document.getElementById('BtnAbaTexto')
+const BtnAbaDecodificacao = document.getElementById('BtnAbaDecodificacao')
 const ModalMensager = document.getElementById('ModalMensager')
 
 const Letras = {
@@ -76,8 +77,20 @@ TextoTextarea.addEventListener('input', () => {
 
 BtnIniciar.onclick = (e) => {
     e.preventDefault()
-    PrintConvetion.textContent = ''
-    ConversorPorTexto(Escolha)
+
+    if (TextoTextarea.value) {
+        PrintConvetion.textContent = ''
+        ConversorPorTexto(Escolha)
+
+    }else {
+        ModalMensager.textContent = 'Nada para converter!'
+        ModalMensager.style.top = '10px'
+
+        setTimeout(() => {
+            ModalMensager.textContent = ''
+            ModalMensager.style.top = '-100px'
+        }, 4000)
+    }
 }
 
 BtnCopiar.onclick = (e) => {

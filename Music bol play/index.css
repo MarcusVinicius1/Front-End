@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap'); /* Sixtyfour Convergence */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root {
+    --Bg-Border-Cicle: white;
+    --Bg-Bool-Music-Note: white;
+    --Tempo-Rotate-Circle: 8s;
+}
+body {
+    background: url('fundo.gif'), #333;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.App {
+    width: 900px;
+    height: 900px;
+    position: relative;
+}
+.App .Card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App .Card:nth-child(1) {
+    width: 100%;
+    height: 100%;
+}
+.App .Card:nth-child(2) {
+    width: 85%;
+    height: 85%;
+}
+.App .Card:nth-child(3) {
+    width: 70%;
+    height: 70%;
+}
+.App .Card .Cicle {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    border: solid var(--Bg-Border-Cicle) 7px;
+    filter: drop-shadow(0 0 10px var(--Bg-Border-Cicle));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.App .Card #CicleUm {
+    animation: SpinCard var(--Tempo-Rotate-Circle) linear infinite;
+}
+.App .Card #CicleDois {
+    animation: SpinCard calc(var(--Tempo-Rotate-Circle) * 1.5) linear infinite;
+}
+.App .Card #CicleTrez {
+    animation: SpinCard calc(var(--Tempo-Rotate-Circle) * 2) linear infinite;
+}
+@keyframes SpinCard {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.App .Card .Cicle span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background: var(--Bg-Bool-Music-Note); */
+    /* box-shadow: inset 0 0 20px var(--Bg-Border-Cicle); */
+    border: solid white 2px;
+    display: grid;
+    place-items: center;
+}
+.App .Card .Cicle span:nth-child(1) {
+    left: -27px;
+}
+.App .Card .Cicle span:nth-child(2) {
+    left: 97.5%;
+}
+.App .Card .Cicle span:nth-child(3) {
+    top: -27px;
+}
+.App .Card .Cicle span:nth-child(4) {
+    top: 95%;
+}
+.App .Card:nth-child(1) .Cicle span:nth-child(4) {
+    transform: translateY(22px);
+}
+.App .Card:nth-child(2) .Cicle span:nth-child(4) {
+    transform: translateY(10px);
+}
+.App .Card:nth-child(3) .Cicle span:nth-child(2) {
+    transform: translateX(-12px);
+}
+.App .PonteiroMusic {
+    position: absolute;
+    width: 0px;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(0, 55, 55);
+    transform-origin: top left;
+    animation: SpinPonteiro 5s linear reverse infinite;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes SpinPonteiro {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.App .PonteiroMusic h2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(0, 255, 81);
+    box-shadow: inset 0 0 20px var(--Bg-Border-Cicle);
+    display: grid;
+    place-items: center;
+}
+.App .PonteiroMusic h2:nth-child(1) {
+    top: 195px;
+}
+.App .PonteiroMusic h2:nth-child(2) {
+    bottom: 95px;
+}
+.App .PonteiroMusic h2:nth-child(3) {
+    bottom: -22px;
+}
+.App .CountCurrentTimeMusic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.381);
+    box-shadow: inset 0 0 10px black;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+.ContainerMusic {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    width: 17vw;
+    height: auto;
+    background: rgba(255, 255, 255, 0.421);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.ContainerMusic img {
+    width: 100%;
+    border-radius: inherit;
+}
+.ContainerMusic .ContainerProgress {
+    width: 100%;
+    height: 15px;
+    background: white;
+    margin-top: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.ContainerMusic .ContainerProgress .ProgressBarra {
+    height: 100%;
+    width: 45%;
+    background: black;
+    border-radius: inherit;
+}
+.ContainerMusic .Controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 25px;
+}
+.ContainerMusic .Controls i {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ContainerMusic .Controls i:hover {
+    color: white;
+    background: black;
+}
+.ContainerMusic .Controls i:active {
+    color: red;
+}
+.ContainerMusic .Controls i:nth-child(3) {
+    display: none;
+}

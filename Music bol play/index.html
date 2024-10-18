@@ -49,15 +49,19 @@
     <div class="ContainerMusic" id="ContainerMusic">
         <img id="CapaMusic">
 
-        <div class="ContainerProgress">
+        <div class="ContainerProgress" id="ContainerProgress">
             <div class="ProgressBarra" id="ProgressBarra"></div>
         </div>
 
         <div class="Controls">
+            <i class="fa-solid fa-music"></i>
             <i class="fa-solid fa-backward" id="BackMusic"></i>
             <i class="fa-solid fa-play" id="PlayMusic"></i>
             <i class="fa-solid fa-pause" id="PauseMusic"></i>
             <i class="fa-solid fa-forward" id="NextMusic"></i>
+            <i class="fa-solid fa-volume-high" id="VolumeMusic"></i>
+
+            <input type="range" id="InputVolumeMusic" min="0" max="100" step="1" value="50">
         </div>
     </div>
 

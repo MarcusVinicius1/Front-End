@@ -68,3 +68,56 @@ const Time = (hor, min, seg) => {
 }
 
 Time(HorMusic, MinMusic, SegMusic)
+
+// Musicas controls
+const VolumeMusic = document.getElementById('VolumeMusic')
+const InputVolumeMusic = document.getElementById('InputVolumeMusic')
+const PlayMusic = document.getElementById('PlayMusic')
+const PauseMusic = document.getElementById('PauseMusic')
+const Card = document.querySelectorAll(".Card")
+const h2BoolColision = document.querySelectorAll('#h2BoolColision')
+const ContainerProgress = document.getElementById("ContainerProgress")
+const ProgressBarra = document.getElementById('ProgressBarra')
+
+VolumeMusic.onclick = () => InputVolumeMusic.style.display == 'block' ? InputVolumeMusic.style.display = 'none' : InputVolumeMusic.style.display = 'block'
+
+// Statuz do video
+function StatuzVideoProgress() {
+    const min = Math.floor(VideoTag.currentTime / 60)
+    const sec = Math.floor(VideoTag.currentTime % 60)
+
+    const DurationFormatted = isNaN(VideoTag.duration) ? 0 : VideoTag.duration
+    const Minutes = Math.floor(DurationFormatted / 60)
+    const Segundos = Math.floor(DurationFormatted % 60)
+    
+    ProgressBarra.style.width = VideoTag.currentTime + 'px'
+    CountCurrentTimeMusic.innerText = `${FormatNumeros(min)}:${FormatNumeros(sec)}`
+}
+
+PlayMusic.onclick = () => {
+    Card.forEach(card => card.style.display = 'flex')
+    h2BoolColision.forEach(h2 => h2.style.display = 'flex')
+
+    PlayMusic.style.display = 'none'
+    PauseMusic.style.display = 'grid'
+    document.body.style.background = 'url(fundo.gif)'
+    document.body.style.backgroundPosition = 'center'
+    document.body.style.backgroundSize = 'cover'
+}
+
+PauseMusic.onclick = () => {
+    Card.forEach(card => card.style.display = 'none')
+    h2BoolColision.forEach(h2 => h2.style.display = 'none')
+    
+    PlayMusic.style.display = 'grid'
+    PauseMusic.style.display = 'none'
+    document.body.style.background = '#333'
+}
+
+ContainerProgress.onclick = (e) => {
+    const NewPosition = e.offsetX
+
+    ProgressBarra.style.width = `${NewPosition}px`
+
+    StatuzVideoProgress()
+}
